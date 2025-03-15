@@ -4,7 +4,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from 'react-bootstrap/Card';
 
-function MiniProductCard({ productObj }) {
+function MiniProductCard({ productObj, children }) {
   return (
     <Card className="podcastCards" style={{ width: '18rem', margin: '10px' }}>
       <Card.Body>
@@ -13,6 +13,7 @@ function MiniProductCard({ productObj }) {
         <Card.Title>{productObj.price}</Card.Title>
         <Card.Title>{productObj.stockQuantity}</Card.Title>
         <Card.Title>{productObj.createdAt}</Card.Title>
+        <div>{children}</div>
       </Card.Body>
     </Card>
   );
@@ -32,6 +33,7 @@ MiniProductCard.propTypes = {
   }).isRequired,
   // onUpdate: PropTypes.func.isRequired,
   // productUser: PropTypes.number.isRequired,
+  children: PropTypes.shape({}).isRequired,
 };
 
 export default MiniProductCard;
