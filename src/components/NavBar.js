@@ -18,8 +18,8 @@ export default function NavBar() {
             <Link className="nav-link" href="/">
               Home
             </Link>
-            <Link className="nav-link" href="/products">
-              Products
+            <Link className="nav-link" href="/orders">
+              Your Orders
             </Link>
             <Link className="nav-link" href="/cart">
               CART SYMBOL

@@ -27,43 +27,16 @@ function ProductCard({ productObj, children }) {
       <Card.Body>
         <Card.Title>{productObj.name}</Card.Title>
         <Card.Title>{productObj.description}</Card.Title>
-        <Card.Title>{productObj.price}</Card.Title>
-        <Card.Title>{productObj.stockQuantity}</Card.Title>
-        <Card.Title>{productObj.createdAt}</Card.Title>
+        <Card.Title>${productObj.price}</Card.Title>
+        <Card.Title># In Stock {productObj.stockQuantity}</Card.Title>
+        {/* <Card.Title>{productObj.createdAt}</Card.Title> */}
         <Link passHref href={`/users/${productObj.user.id}`}>
           {productObj.user.username}
         </Link>
-        {children}
+        <div>{children}</div>
         {/* <Button onClick={() => handleAddToCart(user.id, productObj.id)}>
           Add to Cart
         </Button> */}
-        <div className="ProductBtns">
-          {/* <div className="userPodTopBtns">
-            <Link href={`view-page/${podObj.id}`} passHref>
-              <Button variant="primary" className="m-2">
-                VIEW
-              </Button>
-            </Link>
-            <Button variant={podObj.favorite ? 'danger' : 'outline-danger'} onClick={doFav}>
-              {podObj.favorite ? '⭐' : '❌'}
-            </Button>
-          </div> */}
-
-          {/* <div className="userPodBottomBtns">
-            {user.id === podcastUser && (
-              <>
-                <Link href={`pod/edit/${podObj.id}`} passHref>
-                  <Button variant="primary" className="m-2">
-                    EDIT
-                  </Button>
-                </Link>
-                <Button variant="danger" onClick={deleteThisPodcast}>
-                  DELETE
-                </Button>
-              </>
-            )}
-          </div> */}
-        </div>
       </Card.Body>
     </Card>
   );
